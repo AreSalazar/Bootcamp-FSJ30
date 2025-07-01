@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adare Restaurant</title>
+    <!-- LINK CDN FUENTES, antes del link CSS EXTERNO-->
+
+    <!-- CSS EXTERNO -> link:css -->
+    <link rel="stylesheet" href="./css/style.css"><!--Colocar el atajo link:css para que salga toda la linea-->
+    
+
+    <!-- CSS INTERNO -> link:css -->
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+    </style>
+
+<!--Todos los style en este archivo toman prioridad sobre el style EXTERNO-->
+
+<!--<body style="background-color: blueviolet;">    CSS INLINE -> link:css -->
+
+
+
+</head>
+<body>
+    <div class="container">
+        <!--header.header>section.img-container>img.img-logo-->
+        <header class="header">
+            <section class="img-container"><img src="" alt="" class="img-logo">
+                <img src="./assets/images/logo-adare-restaurant.png" alt="Adare Restaurant Logo" class="img-logo">
+            </section>
+
+            <!--nav.navbar>a.nav-item*5-->
+            <nav class="navbar">
+                <a href="#" class="nav-item">Home</a>
+                <a href="#" class="nav-item">Menu</a>
+                <a href="#" class="nav-item">Reservation</a>
+                <a href="#" class="nav-item">About Us</a>
+                <a href="#" class="nav-item">Contact Us</a>
+            </nav>
+        </header>
+         
+        <!--main>section*2-->
+        <main class="main-container">
+            <section class="main-text-container">
+                <h1 class="main-text">Let's Meat</h1>
+                <article>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus blanditiis dolore architecto nihil reprehenderit voluptate, esse dolorum soluta assumenda quaerat.
+                    <strong><a href="#">Mollitia</a></strong>
+                    </p>
+                </article>
+            </section>
+            <section class="maps-container">
+                <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4609.991043552649!2d-89.74132982328521!3d13.68662588389612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
+                1s0x8f62b7011be0e589%3A0xa6c64fd497e80dff!2sEl%20Jobo!5e0!3m2!1ses!2ssv!4v1750536367110!5m2!1ses!2ssv" style="border:0;" allowfullscreen="" 
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <h4>Made by FSJ30 - Copyright 2025</h4>
+        </footer>
+</body>
+</html>

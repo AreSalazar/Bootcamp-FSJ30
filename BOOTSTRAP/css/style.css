@@ -1,0 +1,10 @@
+.bg-secondary{
+    background-color: rgb(14, 13, 43) !important; /* Red background color por sobre bootstrap gracias al !important*/
+}
+
+.btn-primary{
+    background-color: rgb(146, 83, 206) !important; /* Red background color por sobre bootstrap gracias al !important*/
+    border-color: rgb(10, 28, 194) !important; /* Red border color por sobre bootstrap gracias al !important*/
+    box-shadow: 0 0 0 0.5rem rgba(146, 83, 206, 0.25) !important; /* Red shadow color por sobre bootstrap gracias al !important*/
+    border-radius: 2rem !important; /* Red border radius por sobre bootstrap gracias al !important*/
+}

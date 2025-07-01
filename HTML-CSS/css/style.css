@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/*  Estilo para el documento HTML, se usa para definir estilos globales */
+
+/*  Aplica para todo el documento, se usa el selector universal * o root     */
+:root{
+    --primary-color: #fae422f8; /* color primario */
+}
+
+
+html{
+    /* margin y padding hace que se quite el predeterminado del navegador */ 
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: bisque;
+    background-image: url(../assets/images/background-adare-restaurant.jpg);
+    background-size: cover;/* cubre todo el fondo */
+    
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw; /* vw (ViewWidth) es el ancho de la ventana del navegador */
+    /* height: 100vh; /* vh (ViewHight) es el alto de la ventana del navegador */
+    /* display: flex;
+    justify-content: center; /* centra horizontalmente */
+    text-align: center; /* centra el texto horizontalmente */
+}
+
+/* ==============================================================
+   Estilo para el header
+   ============================================================= */
+
+.container .header{
+    height: 20vh; /* 20% del alto de la ventana */
+}
+
+.container .header .img-container{
+    height: 12vh; /* 12% del alto de la ventana */
+    display: flex; /* usa flexbox para alinear los elementos */
+    justify-content: center; /* centra horizontalmente */
+}
+
+.container .header .img-container .img-logo{
+    height: 10vh;
+}
+
+/* ==============================================================
+   Estilo para el Navbar
+   ============================================================= */
+
+.container .header .navbar{
+    display: grid; /* usa grid para alinear los elementos */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* 4 columnas de igual tamaño */
+    width: 40vw; /* 40% del ancho de la ventana */
+    margin: auto; /* centra horizontalmente */
+}
+
+.container .header .navbar .nav-item{
+    color: white; 
+    text-decoration: none; /* quita el subrayado de los enlaces */
+    font-size: 1.2em; /* tamaño de fuente, este indica 16px aprox */
+    transition: all 0.3s ease; /* transición de 0.3 segundos para todos los cambios */
+}
+
+.container .header .navbar .nav-item:hover{
+/*    animation: navItemHover 0.3s forwards; /* anima el hover, forwards mantiene el estilo final al terminar la animación  */
+    color: var(--primary-color); /* color primario */
+    font-size: 1.4em; /* tamaño de fuente, este indica 22px aprox */
+    text-decoration: underline; /* subraya el enlace */
+}
+
+/*
+@keyframes navItemHover{
+    0%{ /* estado inicial, estilo cuando no hay Hover */ 
+ /*   color: white; 
+    text-decoration: none; /* quita el subrayado de los enlaces */
+ /*   font-size: 1.2em; /* tamaño de fuente, este indica 16px aprox */
+ /*   }
+    100%{ /* estado final, estilo cuando hay Hover */ 
+ /*       color: var(--primary-color); /* color primario */
+ /*       font-size: 1.4em; /* tamaño de fuente, este indica 22px aprox */
+ /*       text-decoration: underline; /* subraya el enlace */ 
+ /*   }
+}
+
+/* ==============================================================
+   Estilo para el main
+   ============================================================= */
+
+.container .main-container{
+    margin-top: 5vh; /* 5% del alto de la ventana */
+}
+
+.container .main-container .main-text-container{
+    color: white;
+    padding: 2rem; /* padding es el espacio interno del elemento */
+}
+
+.container .main-container .main-text-container .main-text{
+    font-family: "Edu NSW ACT Hand Cursive", cursive; /* fuente Rubik importada desde Google Fonts */
+    font-size: 4em; /* tamaño de fuente, este indica 64px aprox */
+    transition: all 0.3s; /* transición de 0.3 segundos para el text-shadow */
+
+}
+
+.container .main-container .main-text:hover{
+    text-shadow: 0.05em 0.05em var(--primary-color); /* sombra de texto */
+}
+
+.container .main-container .main-text-container article{
+    margin: 0 auto; /* centra el artículo */
+    max-width: 40vw; /* ancho máximo del artículo */
+}
+
+.container .main-container .main-text-container article p{
+    color: rgb(224, 224, 224);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.1em; /* tamaño de fuente, este indica 18px aprox */
+}
+
+.container .main-container .main-text-container article p strong a{
+    text-decoration: none; /* quita el subrayado de los enlaces */
+    color: white; /* color del enlace */
+    text-shadow: 0.1em 0.1em var(--primary-color); /* sombra de texto */
+}
+
+.container .main-container .maps-container .maps{
+    width: 60vw; /* ancho máximo del mapa */
+    height: 50vh; /* alto máximo del mapa */
+}
+
+/* =============================================================
+   Estilo para el footer
+   ============================================================= */
+   
+.container .footer{
+    color: white;
+}
+
+.container .footer h4{
+    font-family: "Edu NSW ACT Hand Cursive", cursive;
+    font-size: 1.1em; /* tamaño de fuente, este indica 18px aprox */
+    
+}

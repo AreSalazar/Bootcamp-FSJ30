@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portfolio</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <nav class="navbar">
+        <!-- Logo Section -->
+        <section class="logo-section">
+          <h2 class="logo-text">J<span>V</span>R</h2>
+        </section>
+        <!-- Navigation Menu -->
+        <section class="nav-section">
+          <a class="nav-menu" href="#">About</a>
+          <a class="nav-menu" href="#">Projects</a>
+          <a class="nav-menu" href="#">Contact</a>
+        </section>
+      </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-ctn">
+      <!-- Biografía Section -->
+      <section class="biografia">
+        <h1 class="typingg">I'm Andrea Salazar</h1>
+        <p class="descript">
+          Frontend Developer apasionada por diseñar y construir interfaces
+          modernas, dinámicas e intuitivas!
+        </p>
+        <a href="#"><button class="btn-download">Descargar CV</button></a>
+      </section>
+      <!-- Foto Section -->
+      <section class="foto-container">
+        <img src="./assets/images/perfil_cv2.jpg" alt="foto andrea" />
+      </section>
+    </main>
+
+    <!-- Mis Proyectos Section -->
+    <section class="projects-section">
+      <!-- Header for Projects -->
+      <div class="projects-header">
+        <h2 class="subject">My Projects</h2>
+      </div>
+
+      <!-- Project Cards -->
+      <div class="grid-container">
+        <!-- Project Card 1 -->
+        <article class="projectcard">
+          <div>
+            <img class="img-top" src="./assets/images/projects.jpg" alt="proyecto uno" />
+          </div>
+          <div class="cardcontent">
+            <h3>Proyecto Uno</h3>
+            <div class="enlaces">
+              <a href="#">GitHub</a>
+              <a href="#">Demo</a>
+            </div>
+          </div>
+        </article>
+        <!-- Project Card 2 -->
+        <article class="projectcard">
+          <div>
+            <img class="img-top" src="./assets/images/projects.jpg" alt="proyecto dos" />
+          </div>
+          <div class="cardcontent">
+            <h3>Proyecto Dos</h3>
+            <div class="enlaces">
+              <a href="#">GitHub</a>
+              <a href="#">Demo</a>
+            </div>
+          </div>
+        </article>
+        <!-- Project Card 3 -->
+        <article class="projectcard">
+          <div>
+            <img class="img-top" src="./assets/images/projects.jpg" alt="proyecto tres" />
+          </div>
+          <div class="cardcontent">
+            <h3>Proyecto Tres</h3>
+            <div class="enlaces">
+              <a href="#">GitHub</a>
+              <a href="#">Demo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <form class="formulario">
+        <label>Nombre</label> 
+        <input type="text" class="inpt" placeholder="Tu nombre" />
+
+        <label>Correo electrónico</label>
+        <input type="email" class="inpt" placeholder="Tu correo" />
+
+        <label>Mensaje</label>
+        <textarea class="inpt-mensaje" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+
+        <input type="submit" class="btn-submit" value="Enviar" />
+      </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+      <p class="footer-text">Andrea Salazar © 2025</p>
+      <p class="footer-subtext">Frontend Developer</p>
+      <div class="social-media">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">YouTube</a>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

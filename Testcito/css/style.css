@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html{
+    /* margin y padding hace que se quite el predeterminado del navegador */ 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #192c63;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+.container {
+  margin: 2.5rem 10rem 2.5rem 10rem; /* Margen superior, derecho, inferior e izquierdo */
+  padding: 0;
+}
+
+
+.container .header .navbar{
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  justify-content: space-between; /* Espacio entre los elementos */
+  
+}
+
+.container .header .navbar .logo-section{
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.container .header .navbar .nav-section{
+  display: flex;
+  margin-left: 70rem; /* Espacio a la izquierda */
+  gap: 6rem; /* Espacio entre los elementos */
+}
+
+.container .header .navbar .logo-section .logo-text{
+  font-size: 2.5em;
+}
+
+.container .header .navbar .logo-section .logo-text span{
+  color: rgb(10,165,165);
+  text-shadow: 1px 1px 3px white;
+}
+
+.container .header .navbar .nav-section .nav-menu{
+  text-decoration: none;
+  color: white;
+}
+
+
+.container .main-ctn {
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.container .main-ctn .foto-container img {
+  margin-left: 20rem;
+  width: 40%;
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+.container .main-ctn .biografia .btn-download{
+  background: #bb0b83;
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.container .main-ctn .biografia .typingg{
+  
+  border-right: 2px white;
+  animation: typing 2s steps(25); /* Anima el texto como si estuviera siendo escrito */
+}
+@keyframes typing {
+  to {
+    width: 100%; /* Anima el ancho del texto */
+  }
+}
+
+
+.container .projects-section {
+  padding: 4rem 0; /* Espacio superior e inferior */
+}
+
+.container .projects-section .projects-header {
+  font-size: 1.5rem; /*/ Tamaño de fuente del encabezado */
+  text-align: center;
+  justify-content: center;
+}
+
+.container .projects-section .grid-container {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; /* Tres columnas de igual tamaño */
+  gap: 3rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;   /* Espacio inferior */
+  margin-left: auto;     /* Centra el grid-container en su contenedor padre */
+  margin-right: auto; /* Centra el grid-container en su contenedor padre */
+  max-width: 1200px;     /* Ajusta según tu diseño */
+}
+
+.container .projects-section .grid-container .projectcard {
+  background-color: #7e7f80;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;/* Coloca los elementos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container .projects-section .grid-container .projectcard .img-top {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* Opcional: para que la imagen no se deforme */
+
+}
+
+.container .projects-section .grid-container .projectcard .cardcontent {
+  width: 100%; /* Asegura que el contenido ocupe todo el ancho del contenedor */
+  box-sizing: border-box; /* Asegura que el padding no desborde */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px; /* Tamaño de fuente del contenido */
+
+}
+
+.container .projects-section .grid-container .projectcard .cardcontent .enlaces {
+  display: flex;
+  justify-content: space-between; /* Espacio entre los enlaces GitHub y Demo */
+}
+
+.container .contact-section{
+  display: flex;
+  flex-direction: column;/* Coloca los elementos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  margin-bottom: 4rem;   /* Espacio inferior */
+}
+
+.container .contact-section .formulario label{
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+  font-size: 14px; /* Tamaño de fuente del label */
+}
+
+.container .contact-section .formulario {
+  max-width: 600px; /* Ancho máximo del formulario */
+  width: 100%; /* Ancho completo del formulario */
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.container .contact-section .formulario .inpt {
+  display: block; /* Asegura que los inputs ocupen todo el ancho */
+  width: 100%; /* Ancho completo */
+  margin-bottom: 1rem; /* Espacio inferior */
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px; /* Bordes redondeados */
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.container .contact-section .formulario .inpt-mensaje {
+  height: 100px;
+  width: 100%;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px; /* Bordes redondeados */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container .contact-section .formulario .btn-submit {
+  background-color: blueviolet;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer;
+}
+
+.container .footer-section .footer-text {
+  padding-top: 3rem; /* Espacio superior */
+  border-top: #fff 1px solid; /* Línea superior */
+  text-align: center;
+  font-size: 2.5rem; /* Tamaño de fuente del texto del pie de página */
+  margin-top: 1rem;
+}
+
+.container .footer-section .footer-subtext {
+  text-align: center;
+  font-size: 14px; /* Tamaño de fuente del texto del pie de página */
+  margin-top: 1rem;
+}
+
+.container .footer-section .social-media {
+  display: flex; /* Flexbox para alinear los iconos de redes sociales */
+  justify-content: center; /* Centra los iconos horizontalmente */
+  gap: 2rem; /* Espacio entre los iconos */
+  margin-top: 2rem; /* Espacio superior */
+  
+}
+
+.container .footer-section .social-media a{
+  color: #d3d3d3; /* Color de los enlaces */
+  text-decoration: none; /* Sin subrayado */
+}
