@@ -1,0 +1,43 @@
+-------------------------COMANDOS--------------------------------
+
+--Configuración del perfil
+git config --global user.name "AreSalazar"
+git config --global user.email andrea.raymundosalazar@gmail.com 
+
+--Alistar los archivos que se subirán al commit
+git add .
+
+--Agregar los archivos del commit al local con su mensajito
+git commit -m "Mensajito lindo"
+
+--Cambiar el nombre de una rama sin eliminarla
+git branch -M nuevo-nombre
+
+--Enlazar un repositorio local con uno remoto (nube)
+git remote add origin https://url.git 
+
+--Enviar el commit local al repositorio remoto (nube)
+git push -u origin main --force
+
+-------------BRANCH------------
+
+--Listar las ramas y ver la rama en la que estás 
+git branch
+
+--Ver todas las ramas de un repositorio en la nube
+git branch -r
+
+--Eliminar una rama (Pero antes debes de estar en la rama main o en otra rama para hacer la eliminación)
+git branch -d nombre-rama
+
+--Moverse de una rama a otra
+git checkout nombre-rama
+
+--Crear una nueva rama
+git branch nueva-rama
+git branch feat/ap-478091 (ticket inventado)
+git branch andrea/jira (ejemplo en empresas a la hora de crear ticket)
+
+--Crear una nueva rama y moverse ahí de una
+Git checkout -b nueva-rama
+git switch -c nueva-rama (comando nuevo para la misma función)
