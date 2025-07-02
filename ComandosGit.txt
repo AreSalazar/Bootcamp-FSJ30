@@ -5,7 +5,8 @@ git config --global user.name "AreSalazar"
 git config --global user.email andrea.raymundosalazar@gmail.com 
 
 --Alistar los archivos que se subirán al commit
-git add .
+git add . (Sube todos los archivos)
+git add HTML-CSS/index.html (Sube solo un archivo)
 
 --Agregar los archivos del commit al local con su mensajito
 git commit -m "Mensajito lindo"
@@ -18,6 +19,12 @@ git remote add origin https://url.git
 
 --Enviar el commit local al repositorio remoto (nube)
 git push -u origin main --force
+
+--Sincroniza y baja cambios del repositorio remoto al local
+git pull
+
+--Une una rama con otra, debes de estar en la rama vacia para traer los cambios de la rama llena
+git merge rama-con-cambios
 
 -------------BRANCH------------
 
