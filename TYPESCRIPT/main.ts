@@ -17,6 +17,7 @@
 */
 
 //COMANDOS COMPILAR ARCHIVO: tsc main.ts -> node main.js 
+
 // Declaración de variables
 let numerito = 1; //JS
 

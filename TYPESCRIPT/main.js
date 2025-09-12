@@ -12,6 +12,7 @@
 - El navegador web no lo entiende (Compilado) -> TRADUCIR EL CÓDIGO DE TS A JS POR MEDIO DE TSCOPILOT
 - Node está preparado para correr TS pero no es del todo correcto
 */
+//COMANDOS COMPILAR ARCHIVO: tsc main.ts -> node main.js 
 // Declaración de variables
 var numerito = 1; //JS
 // Datos primitivos
@@ -24,7 +25,24 @@ var nose = "Puedo ser cualquier cosa"; // Se evita porque para eso mejor usamos 
 var noDefinido = undefined; // Rompe la ejecución
 console.log(numerito);
 console.log(numero);
+// Declaración de funciones
 function saludar(nombreParam) {
     return "Holiwis, ".concat(nombreParam);
 }
 console.log(saludar("Kaz Brekker"));
+// Estructuras de datos
+// ARRAY
+var arraycito = [1, 2, 3];
+// Vamos a guardar dentro de EL ARRAY, números o strings
+var otroArray = [1, 2, 3];
+otroArray = ["as"];
+// Vamos a guardar dentro de EL ARRAY, números o strings
+var arraycitoDobleDato = [123, "Suerte", 456];
+// Tupla
+var arrayEspecifico = [18, "Elisse"]; // Un array específico
+// Podemos llegar a tener 2 tipos de datos
+// VARIABLE: TIPO1|TIPO2
+var dosTiposDatos = null;
+dosTiposDatos = "";
+var programador = { name: "Andrea", age: 23 };
+var fsj30 = [{ name: "Andrea", age: 23 }, { name: "Esmeralda", age: 23 }]; // Puedo hacer que Persona sea un array
