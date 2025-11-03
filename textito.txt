@@ -1,3 +1,127 @@
 Holaa! <3
 
 Respuesta: Holii que hay!
+
+Consultas SQL
+
+CREATE DATABASE bootcampfsj30;
+------------------------------------------------------------------------
+
+CREATE TABLE estudiantes(
+    nombre varchar(255),
+    edad int(3),
+    promedio decimal(2,3)
+);
+------------------------------------------------------------------------
+
+USE bootcampfsj30;
+
+-- Indica que DECIMAL 3->enteros y 2->decimales después del punto
+-- Con esto se modifica una columna, en este caso se modificó promedio, antes no tenía tipo, ahora se le estableció (3,2)
+ALTER TABLE estudiantes MODIFY COLUMN promedio DECIMAL (3,2);
+-------------------------------------------------------------------------
+
+-- Con esta secuencia se agrega una llave primaria llamada id tipo int
+-- Con AUTO_INCREMENT es para que no se resetee, va a incrementar y no se quedará vacío
+ALTER TABLE estudiantes ADD id INT PRIMARY KEY NOT NULL AUTO_INCREMENT;
+------------------------------------------------------------------------
+
+-- secuencia para eliminar una tabla de la BD bootcampfsj30
+DROP TABLE estudiantes;
+------------------------------------------------------------------------
+
+-- Se agrega nuevos datos a la fila, el id se agregó solito debido al AUTO_INCREMENT
+INSERT INTO estudiantes (nombre, edad, promedio) VALUES ('Andrea', 23, 8.1);
+------------------------------------------------------------------------
+
+-- Con truncate se vacía la tabla
+TRUNCATE TABLE estudiantes;
+-------------------------------------------------------------------------
+
+-- Sentencia para mostrar todos los datos de la tabla
+-- select es para SELECCIONAR, * es para elegir todos los datos, from es DE, la tabla "estudiantes", where es CUANDO cierto dato cumpla con, un promedio > 9
+SELECT * FROM estudiantes WHERE promedio > 9;
+-------------------------------------------------------------------------
+
+-- update actualiza, la tabla estudiantes set sustituye o sobrepone, el promedio actual a 7.5, where donde, el id sea 1, osea me cambiaría el promedio a mí
+UPDATE estudiantes SET promedio = 7.5 WHERE id = 1;
+------------------------------------------------------------------------
+
+-- Después de escribir esta secuencia, las demás que le siguen es para hacer pruebas. sirve para probar consultas de DML, osea que no sirve para CREATE, DROP Y ALTER
+START TRANSACTION;
+-------------------------------------------------------------------------
+
+-- delete elimina la fila del id 1, o sea mi nombre
+DELETE FROM estudiantes WHERE id = 1;
+------------------------------------------------------------------------
+
+-- se usa para deshacer los cambios realizados durante una transacción que aún no ha sido confirmada
+ROLLBACK;
+------------------------------------------------------------------------
+
+-- Se crea otra llave foránea a la tabla estudiantes aparte de la propia que ya tenía
+ALTER TABLE estudiantes ADD id_curso INT;
+------------------------------------------------------------------------
+
+-- agrega un contrato o restricción con el nombre de fk_curso_estudiante para enlazar la llave foránea llamada recién agregada en la tabla estudiantes(id_curso) y que va a estar referenciada a la llave foránea de la tabla cursos(id_curso)
+ALTER TABLE estudiantes ADD CONSTRAINT fk_curso_estudiante FOREIGN KEY (id) REFERENCES cursos(id_curso);
+------------------------------------------------------------------------
+
+-- Agregar 3 cursos a la BD cursos, se llamaron desde nombre_curso
+INSERT INTO cursos (nombre_curso) VALUES
+('Programación'),
+('Base de datos'),
+('Análisis de datos');
+-------------------------------------------------------------------------
+
+-- Agregar 6 estudiantes a la BD estudiantes, se llamaron desde nombre,edad,promedio,id_curso
+INSERT INTO estudiantes(nombre,edad,promedio,id_curso) VALUES
+('Mauricio', 21, 9.50,3),
+('Hector', 24, 8.10,1),
+('Valentina', 22, 7.85,2),
+('Esteban', 23, 9.20,3),
+('Luisa', 25, 8.60,2),
+('Jairo', 24, 9.70,1)
+-------------------------------------------------------------------------
+
+-- selecciona los valores 
+SELECT estudiantes.id, estudiantes.nombre, estudiantes.edad, estudiantes.promedio, estudiantes.id_curso, cursos.nombre_curso
+-- de la tabla estudiantes y lo UNE con la tabla cursos DONDE (On sustituye el where cuando se unen ms tablas) el id de estudiantes sea igual al id del curso
+FROM estudiantes INNER JOIN cursos ON estudiantes.id = cursos.id_curso;
+-- donde el nombre del curso sea Base de datos, entonces que encuentre los estudiantes con promedio > 9 de esa materia
+WHERE cursos.nombre_curso = 'Base de datos' AND estudiantes.promedio > 9;
+-------------------------------------------------------------------------
+
+-- Mostrar o contar el número total de estudiantes de X curso -> FUNCION COUNT
+-- COUNT() cuenta el número de filas (alumnos) y GROUP BY agrupa esas filas por el nombre o ID del curso.
+SELECT cursos.nombre_curso, COUNT (estudiantes.id) AS cantidad_estudiantes FROM cursos
+INNER JOIN estudiantes ON cursos.id_curso = estudiantes.id_curso
+GROUP BY cursos.nombre_curso ORDER BY cantidad_estudiantes DESC;
+-------------------------------------------------------------------------
+
+-- agregar un nuevo estudiante con un curso asignado primeramente
+INSERT INTO estudiantes(nombre, edad, promedio, id_curso) VALUES
+('Juan',27,7.30,1);
+---------------------------------------------------------------------------
+
+-- Mostrar el promedio de edad por curso. AVG agarra todos esos datos y saca promedio, AVG es una media
+SELECT cursos.nombre_curso, AVG(estudiantes.edad) AS promedio_edad_estudiantes FROM cursos
+INNER JOIN estudiantes ON cursos.id_curso = estudiantes.id_curso
+GROUP BY cursos.nombre_curso
+--------------------------------------------------------------------------
+
+-- Mostrar los cursos que tengan un promedio de notas mayor a 8
+SELECT cursos.nombre_curso, AVG(estudiantes.promedio) FROM cursos
+INNER JOIN estudiantes ON cursos.id_curso = estudiantes.id_curso
+GROUP BY cursos.nombre_curso
+-- Gracias a having, se usa como filtro en vez del where, porque estamos usando funciones (count, avg, etc). En este caso estamos filtrando promedios > 8
+-- se usa después de agrupar (GROUP BY)
+-- el where para filas indivuales o antes de la agregacion, antes de usar having
+HAVING 
+	AVG(estudiantes.promedio) > 8;
+----------------------------------------------------------------------------
+
+-- El LEFT JOIN incluye todos los registros de la tabla de la izquierda (alumnos), incluso si no hay coincidencias en la tabla de la derecha (cursos).
+SELECT cursos.nombre_curso, COUNT (estudiantes.id) AS cantidad_estudiantes FROM cursos
+LEFT JOIN estudiantes ON cursos.id_curso = estudiantes.id_curso
+GROUP BY cursos.nombre_curso ORDER BY cantidad_estudiantes DESC;
