@@ -124,4 +124,15 @@ HAVING
 -- El LEFT JOIN incluye todos los registros de la tabla de la izquierda (alumnos), incluso si no hay coincidencias en la tabla de la derecha (cursos).
 SELECT cursos.nombre_curso, COUNT (estudiantes.id) AS cantidad_estudiantes FROM cursos
 LEFT JOIN estudiantes ON cursos.id_curso = estudiantes.id_curso
+-- ordena los estudiantes de forma Descendente
 GROUP BY cursos.nombre_curso ORDER BY cantidad_estudiantes DESC;
+
+
+Librería es una porción
+Biblioteca es el conjunto de librerías (Router y DOM son librerías de React)
+Framework 
+Angular para el frontend y Laravel para el Backend son Frameworks
+
+
+composer global require laravel/installer -> instala el instalador de laravel
+gracias a ello podemos crear proyectos laravel más facil
