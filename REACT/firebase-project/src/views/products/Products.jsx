@@ -34,7 +34,7 @@ export const Products = () => {
         const docRef = await addDoc(collection(db, "products"), {
             name: product.name,
             price: product.price,
-            stock: product.sotck
+            stock: product.stock,
         });
         console.log("Document written with ID: ", docRef.id);
     }

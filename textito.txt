@@ -127,12 +127,76 @@ LEFT JOIN estudiantes ON cursos.id_curso = estudiantes.id_curso
 -- ordena los estudiantes de forma Descendente
 GROUP BY cursos.nombre_curso ORDER BY cantidad_estudiantes DESC;
 
+La BD Relacional o SQL es más estructurada, utiliza el lenguaje de consulta y se maneja a través de almacenar los datos en tablas, es decir que en columnas y filas
+La BD No Relacional o No SQL es menos estructurada, porque no tiene un esquema o tabla a seguir, sino que lo que se termina guardando depende de como tomar los modelos para que lo cumplan. Puede almacenar datos tipos json, osea objetos, guarda en conexiones en ves de tablas
 
 Librería es una porción
 Biblioteca es el conjunto de librerías (Router y DOM son librerías de React)
 Framework 
 Angular para el frontend y Laravel para el Backend son Frameworks
 
-
+--------------------------------LARAVEL----------------------------------------------
 composer global require laravel/installer -> instala el instalador de laravel
 gracias a ello podemos crear proyectos laravel más facil
+
+--CREAR NUEVO PROYECTO Laravel 
+laravel new
+(colocas nombre del proyecto)
+none
+1
+no
+mysql
+no (database migrations)
+yes (npm install)
+
+-----------MIGRACIONES = TABLAS (Así se dice en esta área, nos referimos a las tablas)------------------
+
+--Crear nuevo MODELO (Product) con su respectivo CONTROLLER AUTOMÁTICO (ProductController) gracias al -c
+php artisan make:model Product -c
+
+--Otra forma de crear un Modelo con Migración, Controlador y Recurso de una sola vez
+php artisan make:model Product -mcr
+
+--En caso que lo decidas crear individualmente y con su respectivo código base
+php artisan make:controller ProductController -r
+
+--Crear nueva tabla a migrar (El NOMBRE de las tablas deben ser en plural)
+php artisan make:migration create_products_table
+php artisan make:migration create_categories_table
+
+--Después de crear tablas, para migrarlas al phpmyadmin
+php artisan migrate
+
+--Actualizar la migración en phpmyadmin cuando se han hecho cambios en VScode
+php artisan migrate:refresh
+--Pero lo recomendable es hacer rollback y luego volver a migrar, refresh da errores
+--Refresh da de baja las migraciones y las vuelve a levantar, pero lo hace con todas las migraciones, no solo una, por eso no es recomendable
+--Reset elimina todas las migraciones
+
+--Eliminar el último lote de migraciones ya hecho, es decir que deshce el último cambio de migración
+php artisan migrate:rollback
+
+--A partir de la version 11 de LARAVEL, hay que instalar la api, ya no la trae
+php artisan install:api
+--Gracias a instalarla nos genera migraciones por default y genera el archivo api.php e installa sanctum
+
+--En caso que ya haya BD y solo se tenga que migrar de phpmyadmin hacia VScode
+php artisan make:model Product -cr
+--Ya no se usa -m porque ya están las migraciones (tablas de BD)
+
+--ORM sirve para facilitarnos cómo trabajar con una base de datos relacional, Eloquent es un ORM y es el que usa LARAVEL
+--ORM Eloquent en nuestro traductor, es quien habla con el gestor de Base de datos en sentencias SQL
+--Nosotros usamos POO, ORM lo traduce a Q-SQL para hablar con la BD y nos devuelve en POO
+
+--LEVANTAR PROYECTO
+php artisan serve
+
+--Agregar SOFTDELETES en una migración aparte, en este caso a otra tabla posts
+--Esto se hace en caso que ya se hayan creado las tablas y decido agregar más datos a la tabla
+php artisan make:migration add_softdeletes_to_posts --table=posts
+
+--------------------------------BLADE TEMPLATE----------------------------------------------
+
+--En public van los archivos puros, como el css puro, el js puro
+--En Resources van los archivos compilados, el css compilado, el js compilado
+--Con blade, el usuario puede ver a través de "inspeccionar" lo que se ha hechom ya que pasa al frontend
